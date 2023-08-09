@@ -1,0 +1,10 @@
+{
+  "manifest_version": 3,
+  "name": "Extensão 01",
+  "description": "Primeira extensão para google chrome",
+  "version": "1.0",
+  "action": {
+    "default_popup": "/src/html/extension-body/extension-body.html",
+    "default_icon": "/src/assets/icons/extension-icon.png"
+  }
+}
