@@ -1,10 +1,32 @@
 {
   "manifest_version": 3,
-  "name": "Extensão 01",
-  "description": "Primeira extensão para google chrome",
+  "name": "Ponto extension",
+  "description": "Extensão para auxiliar no ajuste do ponto (Sênior)",
   "version": "1.0",
+  "icons": {
+    "16": "/src/assets/icons/extension-icon.png",
+    "32": "/src/assets/icons/extension-icon.png",
+    "48": "/src/assets/icons/extension-icon.png",
+    "128": "/src/assets/icons/extension-icon.png"
+  },
+  "background": {
+    "service_worker": "/src/global-js/global.js"
+  },
   "action": {
-    "default_popup": "/src/html/extension-body/extension-body.html",
-    "default_icon": "/src/assets/icons/extension-icon.png"
-  }
+    "default_icon": {
+      "16": "/src/assets/icons/extension-icon.png",
+      "32": "/src/assets/icons/extension-icon.png",
+      "48": "/src/assets/icons/extension-icon.png",
+      "128": "/src/assets/icons/extension-icon.png"
+    },
+    "permissions": ["tabs"],
+    "default_popup": "/src/html/extension-body/extension-body.html"
+  },
+  "content_scripts": [
+    {
+      "js": ["/src/page-js/content.js"],
+      "matches": ["*://platform.senior.com.br/*"],
+      "run_at": "document_end"
+    }
+  ]
 }
