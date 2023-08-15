@@ -8,8 +8,8 @@ class WorkHoursConfiguration {
     setWorkload(workload) {
         let expression = new RegExp("^([0-9])");
 
-        if(expression.test(workload)) alert("OK");
-        else alert("FALHOU");
+        if(expression.test(workload)) alert("Alteração com sucesso !!!");
+        else alert("Informar apenas números");
     }
 }
 
@@ -17,7 +17,6 @@ let config = new WorkHoursConfiguration(8);
 
 async function analizarBatidas() {
     const [currentTab] = await getCurrentTab();
-    console.log(currentTab);
     await chrome.tabs.sendMessage(currentTab.id, config);
 }
 
