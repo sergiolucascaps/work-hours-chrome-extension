@@ -84,6 +84,7 @@ function addSaveListener() {
 }
 
 document.getElementById("btn-analize").addEventListener("click", async () => {
+    console.log('ANALIZE 1');
     await analizarBatidas()
 });
 
